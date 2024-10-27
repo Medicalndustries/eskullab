@@ -49,6 +49,7 @@ public class AuthenticationController {
     public String registrationForm(Model model) {
         UserDTO userDTO = new UserDTO();
         model.addAttribute("user", userDTO);
+        //TODO popraw
         return "register";
     }
 

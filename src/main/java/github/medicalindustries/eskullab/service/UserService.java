@@ -1,7 +1,7 @@
-package me.mmtr.springsecurity.service;
+package github.medicalindustries.eskullab.service;
 
-import me.mmtr.springsecurity.data.User;
-import me.mmtr.springsecurity.data.UserDTO;
+import github.medicalindustries.eskullab.data.User;
+import github.medicalindustries.eskullab.data.UserDTO;
 
 import java.util.List;
 

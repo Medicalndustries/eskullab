@@ -1,4 +1,4 @@
-package me.mmtr.springsecurity.handler;
+package github.medicalindustries.eskullab.handler;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

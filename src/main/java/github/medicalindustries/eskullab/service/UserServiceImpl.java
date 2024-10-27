@@ -1,10 +1,10 @@
-package me.mmtr.springsecurity.service;
+package github.medicalindustries.eskullab.service;
 
-import me.mmtr.springsecurity.data.Role;
-import me.mmtr.springsecurity.data.User;
-import me.mmtr.springsecurity.data.UserDTO;
-import me.mmtr.springsecurity.repository.RoleRepository;
-import me.mmtr.springsecurity.repository.UserRepository;
+import github.medicalindustries.eskullab.data.Role;
+import github.medicalindustries.eskullab.repository.UserRepository;
+import github.medicalindustries.eskullab.data.User;
+import github.medicalindustries.eskullab.data.UserDTO;
+import github.medicalindustries.eskullab.repository.RoleRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

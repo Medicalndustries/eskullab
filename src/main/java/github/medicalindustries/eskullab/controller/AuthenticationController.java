@@ -1,8 +1,8 @@
-package me.mmtr.springsecurity.controller;
+package github.medicalindustries.eskullab.controller;
 
-import me.mmtr.springsecurity.data.User;
-import me.mmtr.springsecurity.data.UserDTO;
-import me.mmtr.springsecurity.service.UserService;
+import github.medicalindustries.eskullab.service.UserService;
+import github.medicalindustries.eskullab.data.User;
+import github.medicalindustries.eskullab.data.UserDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -49,7 +49,6 @@ public class AuthenticationController {
     public String registrationForm(Model model) {
         UserDTO userDTO = new UserDTO();
         model.addAttribute("user", userDTO);
-        //TODO popraw
         return "register";
     }
 

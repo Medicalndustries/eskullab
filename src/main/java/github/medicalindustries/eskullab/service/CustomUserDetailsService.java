@@ -1,8 +1,8 @@
-package me.mmtr.springsecurity.service;
+package github.medicalindustries.eskullab.service;
 
-import me.mmtr.springsecurity.data.Role;
-import me.mmtr.springsecurity.data.User;
-import me.mmtr.springsecurity.repository.UserRepository;
+import github.medicalindustries.eskullab.data.Role;
+import github.medicalindustries.eskullab.repository.UserRepository;
+import github.medicalindustries.eskullab.data.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

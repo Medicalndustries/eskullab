@@ -1,4 +1,4 @@
-package me.mmtr.springsecurity.data;
+package github.medicalindustries.eskullab.data;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

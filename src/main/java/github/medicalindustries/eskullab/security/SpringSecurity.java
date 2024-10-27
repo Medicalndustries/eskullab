@@ -1,6 +1,6 @@
-package me.mmtr.springsecurity.security;
+package github.medicalindustries.eskullab.security;
 
-import me.mmtr.springsecurity.handler.LoginSuccessHandler;
+import github.medicalindustries.eskullab.handler.LoginSuccessHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

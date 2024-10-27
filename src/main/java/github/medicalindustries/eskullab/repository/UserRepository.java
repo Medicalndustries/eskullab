@@ -1,6 +1,6 @@
-package me.mmtr.springsecurity.repository;
+package github.medicalindustries.eskullab.repository;
 
-import me.mmtr.springsecurity.data.User;
+import github.medicalindustries.eskullab.data.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

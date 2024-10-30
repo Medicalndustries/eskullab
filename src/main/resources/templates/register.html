@@ -14,13 +14,18 @@
 
     <div>
         <label for="username">Username:</label>
-        <input type="text" id="username" th:field="*{username}" required />
+        <input type="text" id="username" th:field="*{username}" required/>
     </div>
 
 
     <div>
         <label for="password">Password: </label>
-        <input type="password" id="password" th:field="*{password}" required />
+        <input type="password" id="password" th:field="*{password}" required/>
+    </div>
+
+    <div>
+        <label for="isDoctor">I'm a doctor</label>
+        <input type="checkbox" id="isDoctor" th:field="*{isDoctor}">
     </div>
 
     <div>

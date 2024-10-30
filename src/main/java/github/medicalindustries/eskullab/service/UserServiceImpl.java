@@ -1,10 +1,10 @@
 package github.medicalindustries.eskullab.service;
 
 import github.medicalindustries.eskullab.data.Role;
-import github.medicalindustries.eskullab.repository.UserRepository;
 import github.medicalindustries.eskullab.data.User;
 import github.medicalindustries.eskullab.data.UserDTO;
 import github.medicalindustries.eskullab.repository.RoleRepository;
+import github.medicalindustries.eskullab.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -31,9 +31,18 @@ public class UserServiceImpl implements UserService {
         user.setUsername(userDto.getUsername());
         user.setPassword(PASSWORD_ENCODER.encode(userDto.getPassword()));
 
-        Role role = ROLE_REPOSITORY.findByName("USER");
+        boolean isDoctor = userDto.getIsDoctor();
+        user.setIsDoctor(isDoctor);
+
+        Role role;
+        if (isDoctor) {
+            role = ROLE_REPOSITORY.findByName("ADMIN");
+        } else {
+            role = ROLE_REPOSITORY.findByName("USER");
+        }
+
         if (role == null) {
-            role = checkIfRoleExistsOrCreate();
+            role = createRole(isDoctor);
         }
 
         user.setRoles(List.of(role));
@@ -61,9 +70,13 @@ public class UserServiceImpl implements UserService {
         return userDto;
     }
 
-    private Role checkIfRoleExistsOrCreate() {
+    private Role createRole(boolean isDoctor) {
         Role role = new Role();
-        role.setName("USER");
+        if (isDoctor) {
+            role.setName("ADMIN");
+        } else {
+            role.setName("USER");
+        }
         return ROLE_REPOSITORY.save(role);
     }
 }

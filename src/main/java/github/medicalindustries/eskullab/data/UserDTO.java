@@ -16,4 +16,6 @@ public class UserDTO {
     @NotEmpty(message = "password cannot be empty")
     private String password;
 
+    private Boolean isDoctor;
+
 }

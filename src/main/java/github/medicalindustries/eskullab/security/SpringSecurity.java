@@ -19,14 +19,12 @@ public class SpringSecurity {
         http.authorizeHttpRequests((authorizeRequests) -> {
                     authorizeRequests.requestMatchers("/register").permitAll()
                             .requestMatchers("/login").permitAll()
-                            .requestMatchers("/admin").hasAuthority("ADMIN")
+                            .requestMatchers("/admin").hasAuthority("DOCTOR")
                             .anyRequest().authenticated();
 
-                }).formLogin(formLogin -> {
-                    formLogin.loginPage("/login")
-                            .successHandler(new LoginSuccessHandler())
-                            .permitAll();
-                })
+                }).formLogin(formLogin -> formLogin.loginPage("/login")
+                        .successHandler(new LoginSuccessHandler())
+                        .permitAll())
                 .csrf(AbstractHttpConfigurer::disable)
                 .logout(LogoutConfigurer::permitAll);
 

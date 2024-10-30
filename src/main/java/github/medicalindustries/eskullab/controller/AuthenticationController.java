@@ -35,14 +35,14 @@ public class AuthenticationController {
         return "login";
     }
 
-    @GetMapping("/home")
+    @GetMapping("/patient")
     public String home() {
-        return "home";
+        return "patient-home";
     }
 
-    @GetMapping("/admin")
+    @GetMapping("/doctor")
     public String admin() {
-        return "admin";
+        return "doctor-home";
     }
 
     @GetMapping("/register")

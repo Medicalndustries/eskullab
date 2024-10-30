@@ -36,9 +36,9 @@ public class UserServiceImpl implements UserService {
 
         Role role;
         if (isDoctor) {
-            role = ROLE_REPOSITORY.findByName("ADMIN");
+            role = ROLE_REPOSITORY.findByName("DOCTOR");
         } else {
-            role = ROLE_REPOSITORY.findByName("USER");
+            role = ROLE_REPOSITORY.findByName("PATIENT");
         }
 
         if (role == null) {
@@ -73,9 +73,9 @@ public class UserServiceImpl implements UserService {
     private Role createRole(boolean isDoctor) {
         Role role = new Role();
         if (isDoctor) {
-            role.setName("ADMIN");
+            role.setName("DOCTOR");
         } else {
-            role.setName("USER");
+            role.setName("PATIENT");
         }
         return ROLE_REPOSITORY.save(role);
     }

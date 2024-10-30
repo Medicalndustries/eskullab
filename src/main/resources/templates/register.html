@@ -8,28 +8,28 @@
 
 <body>
 
-<h1>Register</h1>
+<h1>Rejestracja</h1>
 
 <form th:action="@{/register}" method="post" th:object="${user}">
 
     <div>
-        <label for="username">Username:</label>
+        <label for="username">Nazwa użytkownika:</label>
         <input type="text" id="username" th:field="*{username}" required/>
     </div>
 
 
     <div>
-        <label for="password">Password: </label>
+        <label for="password">Hasło: </label>
         <input type="password" id="password" th:field="*{password}" required/>
     </div>
 
     <div>
-        <label for="isDoctor">I'm a doctor</label>
+        <label for="isDoctor">Jestem lekarzem</label>
         <input type="checkbox" id="isDoctor" th:field="*{isDoctor}">
     </div>
 
     <div>
-        <button type="submit">Register</button>
+        <button type="submit">Zarejestruj się</button>
     </div>
 
 </form>

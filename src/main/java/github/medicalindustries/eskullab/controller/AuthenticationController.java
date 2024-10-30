@@ -1,8 +1,8 @@
 package github.medicalindustries.eskullab.controller;
 
-import github.medicalindustries.eskullab.service.UserService;
 import github.medicalindustries.eskullab.data.User;
 import github.medicalindustries.eskullab.data.UserDTO;
+import github.medicalindustries.eskullab.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
 
 @Controller
 public class AuthenticationController {
@@ -27,7 +25,7 @@ public class AuthenticationController {
                         @RequestParam(value = "logout", required = false) String logout) {
 
         if (error != null) {
-            model.addAttribute("error", "Incorrect username or password provided");
+            model.addAttribute("error", "Poniższe dane nie pasują do żadnego istniejącego konta.");
         }
         if (logout != null) {
             model.addAttribute("logout", logout);
@@ -57,7 +55,7 @@ public class AuthenticationController {
         User existingUser = USER_SERVICE.findUserByUsername(userDTO.getUsername());
 
         if (existingUser != null && existingUser.getUsername() != null && !existingUser.getUsername().isEmpty()) {
-            bindingResult.rejectValue("username", "exists", "This username is already in use");
+            bindingResult.rejectValue("username", "exists", "Użytkownik o takiej nazwie już istnieje.");
         }
 
         if (bindingResult.hasErrors()) {
@@ -67,13 +65,5 @@ public class AuthenticationController {
 
         USER_SERVICE.saveUser(userDTO);
         return "redirect:/login";
-    }
-
-    @GetMapping("/users")
-    public String users(Model model) {
-        List<UserDTO> userDTOs = USER_SERVICE.findAllUsers();
-
-        model.addAttribute("users", userDTOs);
-        return "users";
     }
 }
